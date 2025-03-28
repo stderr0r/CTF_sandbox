@@ -1,0 +1,13 @@
+services:
+  ctf-sandbox:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ctf-sandbox
+    container_name: ctf-sandbox
+    volumes:
+      - ~/CTF/workspace:/workspace
+    working_dir: /workspace
+    stdin_open: true     # -i
+    tty: true            # -t
+    entrypoint: /bin/fish
